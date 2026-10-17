@@ -37,8 +37,10 @@ export const portfolio = {
   // ---------- SOCIAL LINKS ----------
   socials: [
     { label: "GitHub", url: "https://github.com/valastar" },
-    { label: "LinkedIn", url: "https://www.linkedin.com/in/iv%C3%A1n-martinez-aguilar-4a4218373/?isSelfProfile=true" },
-    { label: "X", url: "https://x.com/your-username" },
+    {
+      label: "LinkedIn",
+      url: "https://www.linkedin.com/in/iv%C3%A1n-martinez-aguilar-4a4218373/?isSelfProfile=true",
+    },
   ],
 
   // ---------- ABOUT ME ----------
@@ -46,8 +48,7 @@ export const portfolio = {
     title: "About me",
     paragraphs: [
       "I‘m a passionate 18-year-old full-stack developer with a love for creating innovative web applications. I‘ve been constantly learning and building projects that challenge me to grow.",
-      "I believe in writing clean, efficient code and creating user experiences that are both beautiful and functional."
-      ,
+      "I believe in writing clean, efficient code and creating user experiences that are both beautiful and functional.",
     ],
     // Quick facts shown next to the text
     highlights: [
@@ -61,10 +62,16 @@ export const portfolio = {
   skills: {
     title: "Skills",
     groups: [
-      { title: "Languages", items: ["JavaScript","Java","Python", "TypeScript", "HTML", "CSS"] },
+      {
+        title: "Languages",
+        items: ["JavaScript", "Java", "Python", "TypeScript", "HTML", "CSS"],
+      },
       { title: "Frameworks", items: ["Next.js", "React", "Tailwind CSS"] },
       { title: "Tools", items: ["Git", "GitHub", "VS Code", "Figma"] },
-      { title: "Soft skills", items: ["Teamwork", "Communication", "Problem solving"] },
+      {
+        title: "Soft skills",
+        items: ["Teamwork", "Communication", "Problem solving"],
+      },
     ],
   },
 
@@ -74,7 +81,8 @@ export const portfolio = {
     items: [
       {
         title: "QuickGrowth",
-        description: "A Landing page about a businesses navigate the evolving digital landscape with strategic marketing, software solutions, and innovative technology. ",
+        description:
+          "A Landing page about a businesses navigate the evolving digital landscape with strategic marketing, software solutions, and innovative technology. ",
         tags: ["Next.js", "TypeScript", "Tailwind"],
         image: "/images/project-1.svg",
         liveUrl: "https://qg-page.vercel.app/", // <- Live demo (delete the line if none)
@@ -90,7 +98,8 @@ export const portfolio = {
       },
       {
         title: "Programming Fundamentals Guide (Java)",
-        description: "Educational website that teaches Java to first-semester students, with theory, code examples, and practice exercises. Built with Next.js, React, TypeScript, and Tailwind CSS.",
+        description:
+          "Educational website that teaches Java to first-semester students, with theory, code examples, and practice exercises. Built with Next.js, React, TypeScript, and Tailwind CSS.",
         tags: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
         image: "/images/project-3.svg",
         liveUrl: "https://school-java.vercel.app/",
@@ -141,7 +150,8 @@ export const portfolio = {
         school: "Institute of Technology of Hermosillo",
         degree: "B.Sc. in Computer Systems Engineering",
         period: "2025 - 2029",
-        description: "Currently Studying Computer Systems Engineering at the Institute of Technology of Hermosillo, focusing on software development and web technologies.",
+        description:
+          "Currently Studying Computer Systems Engineering at the Institute of Technology of Hermosillo, focusing on software development and web technologies.",
       },
       {
         school: "Colegio Muñoz",
@@ -159,6 +169,30 @@ export const portfolio = {
   // ---------- CONTACT ----------
   contact: {
     title: "Contact",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Send me a message and I will get back to you soon.",
+    text: "Have a project, an internship opportunity, or just want to say hi? Pick whichever channel you prefer, or send me a message below and I'll get back to you soon.",
+    // Delete any channel you don't use. `url` is what opens on click.
+    channels: [
+      {
+        label: "Email",
+        value: "ivanmartinezaguilar08@gmail.com",
+        url: "mailto:ivanmartinezaguilar08@gmail.com",
+      },
+      {
+        label: "WhatsApp",
+        value: "+52 662 205 0077",
+        url: "https://wa.me/526622050077",
+      },
+      { label: "Phone", value: "+52 662 205 0077", url: "tel:+526622050077" },
+      {
+        label: "LinkedIn",
+        value: "Ivan Martinez",
+        url: "https://www.linkedin.com/in/iv%C3%A1n-martinez-aguilar-4a4218373/",
+      },
+      {
+        label: "GitHub",
+        value: "valastar",
+        url: "https://github.com/valastar",
+      },
+    ],
   },
 };
