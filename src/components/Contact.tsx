@@ -1,8 +1,28 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import Script from "next/script";
 import Section from "./Section";
 import { portfolio } from "@/data/portfolio";
+
+declare global {
+  interface Window {
+    turnstile?: {
+      render: (
+        el: HTMLElement,
+        opts: {
+          sitekey: string;
+          callback: (token: string) => void;
+          "expired-callback": () => void;
+        },
+      ) => string;
+      reset: (id?: string) => void;
+      remove: (id: string) => void;
+    };
+  }
+}
+
+const SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
 type Status = "idle" | "sending" | "success" | "error";
 
@@ -13,6 +33,26 @@ export default function Contact() {
   const [message, setMessage] = useState("");
   const [website, setWebsite] = useState(""); // honeypot
   const [status, setStatus] = useState<Status>("idle");
+  const [token, setToken] = useState("");
+  const widgetRef = useRef<HTMLDivElement>(null);
+  const widgetId = useRef<string | undefined>(undefined);
+
+  useEffect(() => {
+    if (!SITE_KEY) return;
+    const timer = setInterval(() => {
+      if (!window.turnstile || !widgetRef.current) return;
+      clearInterval(timer);
+      widgetId.current = window.turnstile.render(widgetRef.current, {
+        sitekey: SITE_KEY,
+        callback: setToken,
+        "expired-callback": () => setToken(""),
+      });
+    }, 200);
+    return () => {
+      clearInterval(timer);
+      if (widgetId.current) window.turnstile?.remove(widgetId.current);
+    };
+  }, []);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -21,7 +61,7 @@ export default function Contact() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, message, website }),
+        body: JSON.stringify({ name, email, message, website, token }),
       });
       if (!res.ok) throw new Error();
       setStatus("success");
@@ -31,6 +71,8 @@ export default function Contact() {
     } catch {
       setStatus("error");
     }
+    window.turnstile?.reset(widgetId.current);
+    setToken("");
   }
 
   const field =
@@ -126,9 +168,19 @@ export default function Contact() {
           className="absolute -left-[9999px] h-0 w-0 opacity-0"
         />
 
+        {SITE_KEY && (
+          <>
+            <Script
+              src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
+              strategy="afterInteractive"
+            />
+            <div ref={widgetRef} />
+          </>
+        )}
+
         <button
           type="submit"
-          disabled={status === "sending"}
+          disabled={status === "sending" || (!!SITE_KEY && !token)}
           className="rounded-lg bg-ink px-6 py-3 text-sm font-medium text-paper transition hover:bg-accent disabled:opacity-60"
         >
           {status === "sending" ? "Sending..." : "Send message"}
