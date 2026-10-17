@@ -15,13 +15,15 @@ export const portfolio = {
   profile: {
     name: "Ivan Martinez", // <- Your full name
     role: "Full-Stack Developer", // <- What you are / want to be
-    tagline: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", // <- One-line pitch
+    tagline: "I build fast, full-stack web apps with Next.js and TypeScript, from the UI to the API. Computer Systems Engineering student, open to internships and junior roles.", // <- One-line pitch
     location: "Hermosillo, Mexico", // <- Where you live
     email: "ivanmartinezaguilar08@gmail.com", // <- Used by the contact form
     available: true, // <- true shows the "Open to opportunities" badge
-    availableText: "Open to internships and junior roles",
-    avatar: "/images/avatar.svg", // <- Replace the file in /public/images
+    availableText: "Open to internships and junior roles · Remote or Hermosillo",
+    avatar: "/images/ivan.svg", // <- Replace the file in /public/images
     resumeUrl: "/resume.pdf", // <- Put your CV in /public/resume.pdf
+    resumeURL: "/resume.pdf", // <- Put your CV in /public/resume.pdf
+    siteUrl: "https://navidev-portfolio.vercel.app", // <- Your domain (no trailing slash)
   },
 
   // ---------- NAVIGATION ----------
@@ -35,45 +37,67 @@ export const portfolio = {
   ],
 
   // ---------- SOCIAL LINKS ----------
-  socials: [
-    { label: "GitHub", url: "https://github.com/valastar" },
-    {
-      label: "LinkedIn",
-      url: "https://www.linkedin.com/in/iv%C3%A1n-martinez-aguilar-4a4218373/?isSelfProfile=true",
-    },
-  ],
+socials: [
+  { label: "GitHub", url: "https://github.com/valastar" },
+  {
+    label: "LinkedIn",
+    url: "https://www.linkedin.com/in/iv%C3%A1n-martinez-aguilar-4a4218373/",
+  },
+],
+
+// en contact:
+channels: [
+  {
+    label: "Email",
+    value: "ivanmartinezaguilar08@gmail.com",
+    url: "mailto:ivanmartinezaguilar08@gmail.com",
+  },
+  {
+    label: "LinkedIn",
+    value: "Ivan Martinez",
+    url: "https://www.linkedin.com/in/iv%C3%A1n-martinez-aguilar-4a4218373/",
+  },
+  { label: "GitHub", value: "valastar", url: "https://github.com/valastar" },
+],
 
   // ---------- ABOUT ME ----------
   about: {
     title: "About me",
     paragraphs: [
-      "I‘m a passionate 18-year-old full-stack developer with a love for creating innovative web applications. I‘ve been constantly learning and building projects that challenge me to grow.",
+      "I'm a passionate 18-year-old full-stack developer with a love for creating innovative web applications. I‘ve been constantly learning and building projects that challenge me to grow.",
       "I believe in writing clean, efficient code and creating user experiences that are both beautiful and functional.",
     ],
     // Quick facts shown next to the text
     highlights: [
       { label: "Years coding", value: "2+" },
-      { label: "Projects built", value: "10+" },
+      { label: "Projects built", value: "5" },
       { label: "Languages", value: "2" },
     ],
   },
 
   // ---------- SKILLS ----------
   skills: {
-    title: "Skills",
-    groups: [
-      {
-        title: "Languages",
-        items: ["JavaScript", "Java", "Python", "TypeScript", "HTML", "CSS"],
-      },
-      { title: "Frameworks", items: ["Next.js", "React", "Tailwind CSS"] },
-      { title: "Tools", items: ["Git", "GitHub", "VS Code", "Figma"] },
-      {
-        title: "Soft skills",
-        items: ["Teamwork", "Communication", "Problem solving"],
-      },
-    ],
-  },
+  title: "Skills",
+  groups: [
+    {
+      title: "Frontend",
+      items: ["TypeScript", "JavaScript", "React", "Next.js", "Tailwind CSS", "HTML & CSS"],
+    },
+    {
+      title: "Backend & APIs",
+      items: ["Next.js API Routes", "REST APIs", "Nodemailer", "Python", "Java"],
+    },
+    { title: "Mobile & Games", items: ["React Native", "Godot Engine"] },
+    {
+      title: "Tools & Workflow",
+      items: ["Git & GitHub", "Vercel (deploy)", "Figma", "VS Code"],
+    },
+    {
+      title: "Currently learning",
+      items: ["Node.js", "PostgreSQL", "Supabase", "Authentication"],
+    },
+  ],
+},
 
   // ---------- PROJECTS ----------
   projects: {
@@ -82,7 +106,7 @@ export const portfolio = {
       {
         title: "QuickGrowth",
         description:
-          "A Landing page about a businesses navigate the evolving digital landscape with strategic marketing, software solutions, and innovative technology. ",
+          "A   Landing page about a businesses navigate the evolving digital landscape with strategic marketing, software solutions, and innovative technology. ",
         tags: ["Next.js", "TypeScript", "Tailwind"],
         image: "/images/project-1.svg",
         liveUrl: "https://qg-page.vercel.app/", // <- Live demo (delete the line if none)
@@ -90,7 +114,7 @@ export const portfolio = {
       },
       {
         title: "Blue Keys",
-        description: lorem,
+        description: "Blue Keys is a premier consultancy firm specializing in the comprehensive design, architecture, and implementation of cloud solutions. Our expertise spans across the leading cloud platforms Amazon Web Services (AWS), Google Cloud Platform (GCP), Microsoft and Azure.",
         tags: ["React", "JavaScript", "NextJS"],
         image: "/images/project-2.svg",
         liveUrl: "https://blue-keys.vercel.app/",
@@ -126,7 +150,7 @@ export const portfolio = {
         bullets: [
           "Make Mobile development with React Native.",
           "Participate in conferences and workshops to stay updated with the latest trends in web development and software engineering.",
-          "Started collage in Intitute of Technology of Hermosillo, studying Computer Systems Engineering.",
+          "Started college in Institute of Technology of Hermosillo, studying Computer Systems Engineering.",
           "Creating my own web applications for personal and professional use.",
         ],
       },
@@ -161,7 +185,7 @@ export const portfolio = {
       },
     ],
     certifications: [
-      { name: "Python", issuer: "Satander Academy", year: "2026" },
+      { name: "Python", issuer: "Santander Academy", year: "2026" },
       { name: "Python", issuer: "DigitalHouse", year: "2026" },
     ],
   },
