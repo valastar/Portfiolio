@@ -14,10 +14,10 @@ export const portfolio = {
   // ---------- HERO + GENERAL INFO ----------
   profile: {
     name: "Ivan Martinez", // <- Your full name
-    role: "Computer Science Student", // <- What you are / want to be
+    role: "Full-Stack Developer", // <- What you are / want to be
     tagline: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", // <- One-line pitch
-    location: "City, Country", // <- Where you live
-    email: "hello@example.com", // <- Used by the contact form
+    location: "Hermosillo, Mexico", // <- Where you live
+    email: "ivanmartinezaguilar08@gmail.com", // <- Used by the contact form
     available: true, // <- true shows the "Open to opportunities" badge
     availableText: "Open to internships and junior roles",
     avatar: "/images/avatar.svg", // <- Replace the file in /public/images
@@ -45,7 +45,7 @@ export const portfolio = {
   about: {
     title: "About me",
     paragraphs: [
-      "I‘m a passionate 17-year-old full-stack developer with a love for creating innovative web applications. I‘ve been constantly learning and building projects that challenge me to grow.",
+      "I‘m a passionate 18-year-old full-stack developer with a love for creating innovative web applications. I‘ve been constantly learning and building projects that challenge me to grow.",
       "I believe in writing clean, efficient code and creating user experiences that are both beautiful and functional."
       ,
     ],
@@ -117,6 +117,8 @@ export const portfolio = {
         bullets: [
           "Make Mobile development with React Native.",
           "Participate in conferences and workshops to stay updated with the latest trends in web development and software engineering.",
+          "Started collage in Intitute of Technology of Hermosillo, studying Computer Systems Engineering.",
+          "Creating my own web applications for personal and professional use.",
         ],
       },
       {
@@ -149,8 +151,8 @@ export const portfolio = {
       },
     ],
     certifications: [
-      { name: "Certification Name", issuer: "Issuer", year: "2026" },
-      { name: "Certification Name", issuer: "Issuer", year: "2025" },
+      { name: "Python", issuer: "Satander Academy", year: "2026" },
+      { name: "Python", issuer: "DigitalHouse", year: "2026" },
     ],
   },
 
